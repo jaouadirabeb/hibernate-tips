@@ -7,7 +7,7 @@ public class UserDao {
             Transaction transaction = null;
             try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
                 transaction = session.beginTransaction();
-                User user = UserFactory.createUser(name, email); // Using Factory
+                User user = UserFactory.createUser(name, email);
                 session.save(user);
                 transaction.commit();
             } catch (Exception e) {
